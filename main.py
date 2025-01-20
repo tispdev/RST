@@ -85,7 +85,7 @@ def switchPlayer():
 def computer(board):
     while currentPlayer == "O":
         position = random.randint(0,8)
-        if board[position] == "-"
+        if board[position] == "-":
             board[position] = "O"
             switchPlayer()
 
