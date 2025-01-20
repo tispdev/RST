@@ -1,7 +1,7 @@
 import random
 board = ["-", "-", "-",
          "-", "-", "-",
-         "=", "-", "-"]
+         "-", "-", "-"]
 currentPlayer = "X"
 winner = None
 gameRunning = True
