@@ -32,7 +32,12 @@ def tic_tac_toe_menu():
     if show_instructions == "yes":
         display_instructions()
 
-    print("Starting the game...")
+    while True:
+        mode = input("Do you want to play against another player or the computer? (player/computer): ").strip().lower()
+        if mode in ["player", "computer"]:
+            return mode
+        else:
+            print("Invalid input. Please type 'player' or 'computer'.")
 
 tic_tac_toe_menu()
 
