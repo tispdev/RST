@@ -6,6 +6,36 @@ currentPlayer = "X"
 winner = None
 gameRunning = True
 
+#instructions
+def display_instructions():
+    print("""
+        Welcome to Tic-Tac-Toe!
+
+        Instructions:
+        1. The game is played on a 3x3 grid.
+        2. Players take turns to place their marker (X or O) in an empty cell.
+        3. The first player to align three markers horizontally, vertically, or diagonally wins.
+        4. If all 9 cells are filled and no player has aligned three markers, the game ends in a draw.
+        5. Grid starts at 1 and goes to 9. (Left to right)
+
+        Have fun!
+        """)
+def tic_tac_toe_menu():
+    print("Welcome to Tic-Tac-Toe!")
+    while True:
+        show_instructions = input("Do you want to see the instructions? (yes/no): ").strip().lower()
+        if show_instructions in ["yes", "no"]:
+            break
+        else:
+            print("Invalid input. Please type 'yes' or 'no'.")
+
+    if show_instructions == "yes":
+        display_instructions()
+
+    print("Starting the game...")
+
+tic_tac_toe_menu()
+
 #print game board
 def printBoard(board):
     print(board[0] + " | " + board[1] + " | " + board[2])
@@ -13,8 +43,6 @@ def printBoard(board):
     print(board[3] + " | " + board[4] + " | " + board[5])
     print("----------")
     print(board[6] + " | " + board[7] + " | " + board[8])
-
-
 
 #take player input
 def playerInput(board):
