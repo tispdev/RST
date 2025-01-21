@@ -6,9 +6,6 @@ currentPlayer = "X"
 winner = None
 gameRunning = True
 
-#menu
-def menu
-
 #print game board
 def printBoard(board):
     print(board[0] + " | " + board[1] + " | " + board[2])
@@ -21,13 +18,19 @@ def printBoard(board):
 
 #take player input
 def playerInput(board):
-    inp = int(input("Enter a number 1-9: "))
-    #check if input is valid and if no player has gone there yet
-    if inp >= 1 and inp <= 9 and board[inp-1] == "-":
-        board[inp-1] = currentPlayer
-    else:
-        print("Spot is already taken!")
-        print("Enter a number 1-9")
+    while True:
+        try:
+            inp = int(input("Enter a number 1-9: "))
+            if 1 <= inp <= 9:
+                if board[inp - 1] == "-":
+                    board[inp - 1] = currentPlayer
+                    break
+                else:
+                    print("Spot is already taken, try again!")
+            else:
+                print("Enter a number between 1 and 9!")
+        except ValueError:
+            print("Invalid input. Enter a number 1-9.")
 
 #check for win or tie
 #check horizontles first
