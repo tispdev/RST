@@ -6,6 +6,9 @@ currentPlayer = "X"
 winner = None
 gameRunning = True
 
+#menu
+def menu
+
 #print game board
 def printBoard(board):
     print(board[0] + " | " + board[1] + " | " + board[2])
@@ -13,6 +16,8 @@ def printBoard(board):
     print(board[3] + " | " + board[4] + " | " + board[5])
     print("----------")
     print(board[6] + " | " + board[7] + " | " + board[8])
+
+
 
 #take player input
 def playerInput(board):
@@ -22,6 +27,7 @@ def playerInput(board):
         board[inp-1] = currentPlayer
     else:
         print("Spot is already taken!")
+        print("Enter a number 1-9")
 
 #check for win or tie
 #check horizontles first
@@ -80,14 +86,6 @@ def switchPlayer():
         currentPlayer = "O"
     else:
         currentPlayer = "X"
-
-#computer program (to play computer)
-def computer(board):
-    while currentPlayer == "O":
-        position = random.randint(0,8)
-        if board[position] == "-":
-            board[position] = "O"
-            switchPlayer()
 
 
 while gameRunning:
