@@ -6,7 +6,7 @@ currentPlayer = "X"
 winner = None
 gameRunning = True
 
-#instructions
+
 def display_instructions():
     print("""
         Welcome to Tic-Tac-Toe!
@@ -41,7 +41,7 @@ def tic_tac_toe_menu():
 
 tic_tac_toe_menu()
 
-#print game board
+
 def printBoard(board):
     print(board[0] + " | " + board[1] + " | " + board[2])
     print("----------")
@@ -49,7 +49,7 @@ def printBoard(board):
     print("----------")
     print(board[6] + " | " + board[7] + " | " + board[8])
 
-#computer turn
+
 def computerInput(board):
     while True:
         inp = random.randint(1, 9)
@@ -57,7 +57,7 @@ def computerInput(board):
             board[inp - 1] = currentPlayer
             break
 
-#take player input
+
 def playerInput(board):
     while True:
         try:
@@ -73,10 +73,8 @@ def playerInput(board):
         except ValueError:
             print("Invalid input. Enter a number 1-9.")
 
-#check for win or tie
-#check horizontles first
+
 def checkHorizontle(board):
-    #global makes changes to the  winner variable
     global winner
     #checks the board to see the winner
     if board[0] == board [1] == board[2] and board[1] != "-":
@@ -123,7 +121,7 @@ def checkWin():
     if checkDiag(board) or checkHorizontle(board) or checkRow(board):
         print(f"The winner is {winner}")
         gameRunning = False
-#switching to other player
+
 def switchPlayer():
     global currentPlayer
     if currentPlayer == "X":
@@ -131,7 +129,6 @@ def switchPlayer():
     else:
         currentPlayer = "X"
 
-#this is the game loop
 mode = tic_tac_toe_menu()
 while gameRunning:
     printBoard(board)
@@ -144,4 +141,3 @@ while gameRunning:
     if gameRunning:
         switchPlayer()
 
-#end
