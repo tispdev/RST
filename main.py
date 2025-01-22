@@ -131,14 +131,17 @@ def switchPlayer():
     else:
         currentPlayer = "X"
 
-
+#this is the game loop
+mode = tic_tac_toe_menu()
 while gameRunning:
     printBoard(board)
-    playerInput(board)
+    if mode == "player" or currentPlayer == "X":
+        playerInput(board)
+    else:
+        computerInput(board)
     checkWin()
     checkTie(board)
-    switchPlayer()
-    checkWin()
-    checkTie(board)
+    if gameRunning:
+        switchPlayer()
 
 #end
