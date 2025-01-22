@@ -49,6 +49,14 @@ def printBoard(board):
     print("----------")
     print(board[6] + " | " + board[7] + " | " + board[8])
 
+#computer turn
+def computerInput(board):
+    while True:
+        inp = random.randint(1, 9)
+        if board[inp - 1] == "-":
+            board[inp - 1] = currentPlayer
+            break
+
 #take player input
 def playerInput(board):
     while True:
